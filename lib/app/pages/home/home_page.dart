@@ -1,6 +1,5 @@
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
-import 'package:study_flutter_push_notifications/app/pages/home/widgets/notifications_button.dart';
 import 'package:study_flutter_push_notifications/app/shared/utils/notifications_utils.dart';
 
 class HomePage extends StatefulWidget {
@@ -36,9 +35,6 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Home'),
-        actions: const [
-          NotificationsButton(),
-        ],
       ),
       body: const Center(
         child: Text('Content'),
