@@ -1,6 +1,7 @@
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:study_flutter_push_notifications/app/pages/home/widgets/notifications_button.dart';
+import 'package:study_flutter_push_notifications/app/shared/utils/notifications_utils.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -10,9 +11,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  String messageTitle = "Empty";
-  String notificationAlert = "alert";
-
   @override
   void initState() {
     super.initState();
@@ -25,19 +23,12 @@ class _HomePageState extends State<HomePage> {
   }
 
   void _listenToMessage(RemoteMessage? message) {
-    if (message == null) {
-      print('No new notifications.');
-      return;
+    if (NotificationsUtils.instance.isValidNotification(message)) {
+      Navigator.of(context).pushNamed(
+        '/notification',
+        arguments: message!.notification,
+      );
     }
-
-    print('message arrived');
-    print(message.notification?.title);
-    print(message.notification?.body);
-    print(message.data);
-    // setState(() {
-    //   messageTitle = message.data["title"];
-    //   notificationAlert = "Application opened from Notification";
-    // });
   }
 
   @override
@@ -49,19 +40,8 @@ class _HomePageState extends State<HomePage> {
           NotificationsButton(),
         ],
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              notificationAlert,
-            ),
-            Text(
-              messageTitle,
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
-        ),
+      body: const Center(
+        child: Text('Content'),
       ),
     );
   }

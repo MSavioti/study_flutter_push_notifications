@@ -7,6 +7,8 @@ class NotificationsUtils {
   static NotificationsUtils get instance =>
       _instance ??= NotificationsUtils._();
 
+  static const String notificationKeyValue = 'notification';
+
   Future<void> checkForNewNotifications(
     Function(RemoteMessage?) onNotificationFound,
   ) async {
@@ -17,5 +19,18 @@ class NotificationsUtils {
     }
 
     FirebaseMessaging.onMessageOpenedApp.listen(onNotificationFound);
+  }
+
+  bool isValidNotification(RemoteMessage? message) {
+    if (message == null || message.notification == null) {
+      return false;
+    }
+
+    if (message.data['type'] != null &&
+        message.data['type'] == notificationKeyValue) {
+      return true;
+    }
+
+    return false;
   }
 }
