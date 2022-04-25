@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:study_flutter_push_notifications/app/app.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   Firebase.initializeApp();
   runApp(const App());
 }
