@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:study_flutter_push_notifications/app/pages/home/home_page.dart';
+import 'package:study_flutter_push_notifications/app/pages/notification/notification_page.dart';
 import 'package:study_flutter_push_notifications/app/pages/notifications/notifications_page.dart';
 
 class App extends StatelessWidget {
@@ -16,6 +17,7 @@ class App extends StatelessWidget {
       routes: {
         '/': (context) => const HomePage(),
         '/notifications': (context) => const NotificationsPage(),
+        '/notification': (context) => const NotificationPage(),
       },
     );
   }
