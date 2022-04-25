@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:study_flutter_push_notifications/app/pages/home/widgets/notifications_button.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -8,13 +9,8 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Home'),
-        actions: [
-          IconButton(
-            onPressed: () {
-              Navigator.of(context).pushNamed('/notifications');
-            },
-            icon: const Icon(Icons.notifications),
-          ),
+        actions: const [
+          NotificationsButton(),
         ],
       ),
       body: Container(),
