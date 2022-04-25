@@ -8,6 +8,14 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Home'),
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.of(context).pushNamed('/notifications');
+            },
+            icon: const Icon(Icons.notifications),
+          ),
+        ],
       ),
       body: Container(),
     );
