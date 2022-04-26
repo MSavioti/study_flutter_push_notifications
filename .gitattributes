@@ -47,3 +47,4 @@ windows/* linguist-detectable=false
 *.h linguist-detectable=false
 *.cpp linguist-detectable=false
 *.cmake linguist-detectable=false
+*.txt linguist-detectable=false
