@@ -40,6 +40,7 @@
 android/* linguist-detectable=false
 ios/* linguist-detectable=false
 web/* linguist-detectable=false
+windows/* linguist-detectable=false
 *.swift linguist-detectable=false
 *.kt linguist-detectable=false
 *.js linguist-detectable=false
