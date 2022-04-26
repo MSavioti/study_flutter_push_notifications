@@ -45,5 +45,4 @@ web/* linguist-detectable=false
 *.js linguist-detectable=false
 *.h linguist-detectable=false
 *.cpp linguist-detectable=false
-*.make linguist-detectable=false
 *.cmake linguist-detectable=false
